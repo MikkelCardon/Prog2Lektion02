@@ -23,10 +23,11 @@ public class Basket {
         }
         System.out.println("-------------------------------------------------------------------------");
         for (Discount discount : discounts) {
-            double discountAmount = discount.applyDiscount(total);
+            double discountAmount = discount.applyDiscount(total, items);
             System.out.printf("%-60s %6.2f kr.%n", discount.getDescription(), discountAmount);
             totalDiscount += discountAmount;
         }
+
         double discountedTotal = total + totalDiscount;
         System.out.println("-------------------------------------------------------------------------");
         System.out.printf("%-60s %5.2f kr.%n", "i alt: ", discountedTotal);
